@@ -1,0 +1,18 @@
+{ 
+	"name": "davecache", 
+	"description": "Read and write objects into an in-memory cache.",
+	"author": "Dave Winer <dave@smallpicture.com>",
+	"version": "0.4.0",
+	"main": "davecache.js",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/scripting/cache.git"
+		},
+	"dependencies" : {
+		"daveutils": "*"
+		}, 
+	"license": "MIT",
+	"engines": { 
+		"node": "*"
+		}
+	}
