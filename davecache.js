@@ -4,8 +4,8 @@ const utils = require ("daveutils");
 const fs = require ("fs");
 
 exports.start = start; 
-exports.get = get; 
-exports.save = save; 
+exports.get = dbget; 
+exports.set = dbset; 
 exports.writecache = writecache; 
 
 var config = {
@@ -85,12 +85,15 @@ function writecache () {
 function everySecond () {
 	writecache ();
 	}
-function start (options) {
-	for (var x in options) {
-		config [x] = options [x];
+function start (options, callback) {
+	if (options !== undefined) {
+		for (var x in options) {
+			config [x] = options [x];
+			}
 		}
 	setInterval (everySecond, 1000); 
-	
-	
+	if (callback !== undefined) {
+		callback ();
+		}
 	}
 
